@@ -99,11 +99,12 @@ public class menu
 			d_read = d_read.substring(delim+1);
 			drinks = Integer.parseInt(d_read);
 			
-			session.setFirst(first);
+			session = new User(first, last, weight, ((ft*12) + in), drinks);
+			/*session.setFirst(first);
 			session.setLast(last);
 			session.setWeight(weight);
 			session.setHeight(((ft*12) + in));
-			session.setDrinks(drinks);
+			session.setDrinks(drinks);*/
 			
 		} catch (IOException e) {
 			System.err.println("Error reading user data");
@@ -115,7 +116,7 @@ public class menu
 	static int mainQuery()
 	{
 	
-		System.out.println("Main Menu:");
+		System.out.println("\nMain Menu:");
 		System.out.println("----------\n");
 		System.out.println("1) Enter Liquor Cabinet");
 		System.out.println("2) Enter Beer Fridge");
@@ -127,7 +128,6 @@ public class menu
 		Scanner inScan = new Scanner(System.in);
 		
 		int response = inScan.nextInt();
-		inScan.close();
 		
 		return response;
 		
